@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DRSS_20_21_Season_Auto_Update.iml" filepath="$PROJECT_DIR$/.idea/modules/DRSS_20_21_Season_Auto_Update.iml" group="DRSS_20_21_Season_Auto_Update" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FtcRobotController/FtcRobotController.iml" filepath="$PROJECT_DIR$/.idea/modules/FtcRobotController/FtcRobotController.iml" group="DRSS_20_21_Season_Auto_Update/FtcRobotController" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TeamCode/TeamCode.iml" filepath="$PROJECT_DIR$/.idea/modules/TeamCode/TeamCode.iml" group="DRSS_20_21_Season_Auto_Update/TeamCode" />
+    </modules>
+  </component>
+</project>

@@ -72,7 +72,7 @@ public class SampleRevBlinkinLedDriver extends OpMode {
     Deadline ledCycleDeadline;
     Deadline gamepadRateLimit;
 
-    protected enum DisplayKind {
+    public enum DisplayKind {
         MANUAL,
         AUTO
     }
