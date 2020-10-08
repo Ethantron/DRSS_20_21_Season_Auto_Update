@@ -16,7 +16,6 @@ import com.qualcomm.robotcore.hardware.Servo;
 import static java.lang.Math.abs;
 
 
-@SuppressWarnings("MagicConstant")
 @TeleOp(name = "Tiny_Tank", group= "team")
 public class Tiny_Tank extends OpMode {
 

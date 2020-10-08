@@ -8,6 +8,7 @@
       <w>blinkin</w>
       <w>capout</w>
       <w>coeff</w>
+      <w>currentstep</w>
       <w>drivetrain</w>
       <w>drivetrains</w>
       <w>egrj</w>
@@ -22,6 +23,8 @@
       <w>iavlg</w>
       <w>iugl</w>
       <w>launchbar</w>
+      <w>leftdown</w>
+      <w>leftup</w>
       <w>mechanum</w>
       <w>mwavqetw</w>
       <w>naxg</w>
@@ -32,8 +35,14 @@
       <w>pqnxu</w>
       <w>pulldown</w>
       <w>pushbot</w>
+      <w>relayset</w>
+      <w>rightdown</w>
+      <w>rightup</w>
       <w>robotcontroller</w>
+      <w>servoleft</w>
+      <w>servoright</w>
       <w>skystone</w>
+      <w>slowtggl</w>
       <w>teamcode</w>
       <w>tele</w>
       <w>tely</w>
@@ -41,9 +50,13 @@
       <w>tflite</w>
       <w>tfod</w>
       <w>tgyt</w>
+      <w>trackables</w>
+      <w>trackporter</w>
       <w>ugmx</w>
+      <w>valadjust</w>
       <w>vbqu</w>
       <w>vuforia</w>
+      <w>webcam</w>
     </words>
   </dictionary>
 </component>
