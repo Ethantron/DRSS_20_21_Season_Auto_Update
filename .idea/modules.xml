@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DRSS_20_21_Season_Auto_Update.iml" filepath="$PROJECT_DIR$/.idea/modules/DRSS_20_21_Season_Auto_Update.iml" group="DRSS_20_21_Season_Auto_Update" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FtcRobotController/FtcRobotController.iml" filepath="$PROJECT_DIR$/.idea/modules/FtcRobotController/FtcRobotController.iml" group="DRSS_20_21_Season_Auto_Update/FtcRobotController" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TeamCode/TeamCode.iml" filepath="$PROJECT_DIR$/.idea/modules/TeamCode/TeamCode.iml" group="DRSS_20_21_Season_Auto_Update/TeamCode" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DRSS_20_21_Season_Auto_Update.iml" filepath="$PROJECT_DIR$/.idea/modules/DRSS_20_21_Season_Auto_Update.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FtcRobotController/DRSS_20_21_Season_Auto_Update.FtcRobotController.iml" filepath="$PROJECT_DIR$/.idea/modules/FtcRobotController/DRSS_20_21_Season_Auto_Update.FtcRobotController.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TeamCode/DRSS_20_21_Season_Auto_Update.TeamCode.iml" filepath="$PROJECT_DIR$/.idea/modules/TeamCode/DRSS_20_21_Season_Auto_Update.TeamCode.iml" />
     </modules>
   </component>
 </project>
