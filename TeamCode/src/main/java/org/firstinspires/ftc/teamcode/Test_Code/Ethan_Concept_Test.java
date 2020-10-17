@@ -13,11 +13,16 @@
 
 package org.firstinspires.ftc.teamcode.Test_Code;
 
+import com.qualcomm.hardware.rev.RevBlinkinLedDriver;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.Range;
+
+import org.firstinspires.ftc.robotcontroller.external.samples.SampleRevBlinkinLedDriver;
+import org.firstinspires.ftc.robotcore.external.Telemetry;
+import org.firstinspires.ftc.robotcore.internal.system.Deadline;
 
 @TeleOp(name = "Ethan_Concept_Test", group= "Test_Code")
 public class Ethan_Concept_Test extends LinearOpMode {
@@ -43,8 +48,25 @@ public class Ethan_Concept_Test extends LinearOpMode {
     double launcherSpeed = 1;
     double conveyorSpeed = 1;
 
+    private final static int LED_PERIOD = 10;
+    RevBlinkinLedDriver blinkinLedDriver;
+    RevBlinkinLedDriver.BlinkinPattern pattern;
+
+    Telemetry.Item patternName;
+    Telemetry.Item display;
+    Deadline ledCycleDeadline;
+    Deadline gamepadRateLimit;
+    SampleRevBlinkinLedDriver.DisplayKind displayKind;
+
+
     @Override
     public void runOpMode() {       // Begins running the initialization code when the "int" button is pressed
+
+        displayKind = SampleRevBlinkinLedDriver.DisplayKind.MANUAL;
+        blinkinLedDriver = hardwareMap.get(RevBlinkinLedDriver.class, "blinkin");
+        pattern = RevBlinkinLedDriver.BlinkinPattern.BEATS_PER_MINUTE_LAVA_PALETTE;
+        blinkinLedDriver.setPattern(pattern);
+
 
         /*
          * Use the hardwareMap to get the dc motors and servos by name. Note
@@ -79,6 +101,8 @@ public class Ethan_Concept_Test extends LinearOpMode {
         motorConveyor.setDirection(DcMotor.Direction.FORWARD);
         motorLauncher.setDirection(DcMotor.Direction.FORWARD);
 
+        pattern = RevBlinkinLedDriver.BlinkinPattern.COLOR_WAVES_PARTY_PALETTE;
+        displayPattern();
 
         //Initialization Telemetry
         telemetry.addData("Drive Train: ", "Initialized");      // Adds telemetry to the screen to show that the drive train is initialized
@@ -223,6 +247,18 @@ public class Ethan_Concept_Test extends LinearOpMode {
 
         // return scaled value.
         return dScale;
+    }
+
+    protected void setDisplayKind(SampleRevBlinkinLedDriver.DisplayKind displayKind)
+    {
+        this.displayKind = displayKind;
+        //display.setValue(displayKind.toString());
+    }
+
+    protected void displayPattern()
+    {
+        blinkinLedDriver.setPattern(pattern);
+        //patternName.setValue(pattern.toString());
     }
 
 }
