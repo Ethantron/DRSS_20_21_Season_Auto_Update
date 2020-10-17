@@ -2,11 +2,13 @@
   <dictionary name="ethan">
     <words>
       <w>alpx</w>
+      <w>andymark</w>
       <w>aqrjzuygz</w>
       <w>backleft</w>
       <w>backright</w>
       <w>blinkin</w>
       <w>capout</w>
+      <w>checkmark</w>
       <w>coeff</w>
       <w>currentstep</w>
       <w>drivetrain</w>
@@ -25,6 +27,7 @@
       <w>launchbar</w>
       <w>leftdown</w>
       <w>leftup</w>
+      <w>mecanum</w>
       <w>mechanum</w>
       <w>mwavqetw</w>
       <w>naxg</w>

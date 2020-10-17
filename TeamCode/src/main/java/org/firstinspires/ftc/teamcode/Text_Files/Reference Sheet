@@ -8,12 +8,12 @@ TelyOp reference sheet.
 		telemetry.update();
 
     Vuforia:
-    
+
        	public static final String VUFORIA_KEY = "ASHBoLr/////AAABmbIUXlLiiEgrjVbqu8Iavlg6iPFigYso/+BCZ9uMzyAZFoo9CIzpV818SAqrjzuygz3hCeLW/ImK3xMH7DalGMwavqetwXS9Jw4I+rff2naxgV7n+EtYFvdCkUJDHfHVq1A4mhxDHgrjWZEqnLmZk25ppnIizQ0Ozcq4h6UmrWndEVEz8eKcCgn+IuglCEoEswvNBRAaKm/TAlpxLRNC6jQkZdJUh/TGYT05g9YCZo4+1ugmx01jrPCyHQVPVoeXm6VebLIuP7sNPw7njYzmVi2ffV5bYc4vf5kc5l5JwhBdPqnxuMfDLnHWaCkAO1UlVWqy2eY7/4b6iUYI2yN16ZKswSzLMmMNtPBu7e9HhKxA";
 
 
 	TelyOp:
-	
+
 		@TeleOp(name = "", group= "")
 
 	Galileo Definitions:
@@ -57,7 +57,7 @@ TelyOp reference sheet.
 		double Backright;
 
 	Mecanum Init:
-	
+
 		motorFrontRight = hardwareMap.dcMotor.get("FR");
 		motorFrontLeft = hardwareMap.dcMotor.get("FL");
 		motorBackLeft = hardwareMap.dcMotor.get("BL");
@@ -71,56 +71,56 @@ TelyOp reference sheet.
 Autonomous directions reference sheet.
 
 	Stop:
-	
+
 		robot.motorFrontRight.setPower(0);
 		robot.motorFrontLeft.setPower(0);
 		robot.motorBackLeft.setPower(0);
 		robot.motorBackRight.setPower(0);
 
 	Forward:
-	
+
 		robot.motorFrontRight.setPower(.6);
 		robot.motorFrontLeft.setPower(.6);
 		robot.motorBackLeft.setPower(.6);
 		robot.motorBackRight.setPower(.6);
 
 	Reverse:
-	
+
 		robot.motorFrontRight.setPower(-.6);
 		robot.motorFrontLeft.setPower(-.6);
 		robot.motorBackLeft.setPower(-.6);
 		robot.motorBackRight.setPower(-.6);
 
 	Turn Left:
-	
+
 		robot.motorFrontRight.setPower(.6);
 		robot.motorFrontLeft.setPower(-.6);
 		robot.motorBackLeft.setPower(-.6);
 		robot.motorBackRight.setPower(.6);
 
 	Turn Right:
-	
+
 		robot.motorFrontRight.setPower(-.6);
 		robot.motorFrontLeft.setPower(.6);
 		robot.motorBackLeft.setPower(.6);
 		robot.motorBackRight.setPower(-.6);
 
 	Strafe Left:
-	
+
 		robot.motorFrontRight.setPower(.7);
 		robot.motorFrontLeft.setPower(-.4);
 		robot.motorBackLeft.setPower(.7);
 		robot.motorBackRight.setPower(-.4);
 
 	Strafe Right:
-	
+
 		robot.motorFrontRight.setPower(-.7);
 		robot.motorFrontLeft.setPower(.4);
 		robot.motorBackLeft.setPower(-.7);
 		robot.motorBackRight.setPower(.4);
 
 	Timing Reference:
-	
+
 		ResetTime.reset();
 		while (opModeIsActive() && (ResetTime.seconds() < 1)){
 		telemetry.addData("Where", "Step : 1 %2.5f S Elapsed", ResetTime.seconds());
