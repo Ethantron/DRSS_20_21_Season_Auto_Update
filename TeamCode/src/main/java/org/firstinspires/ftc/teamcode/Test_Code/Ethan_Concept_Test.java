@@ -140,18 +140,26 @@ public class Ethan_Concept_Test extends LinearOpMode {
 
         if (gamepad1.a){
             driveSpeed = 1;
+            pattern = RevBlinkinLedDriver.BlinkinPattern.CP1_LIGHT_CHASE;
+            displayPattern();
         }
 
         if (gamepad1.b){
             driveSpeed = .75;
+            pattern = RevBlinkinLedDriver.BlinkinPattern.COLOR_WAVES_FOREST_PALETTE;
+            displayPattern();
         }
 
         if (gamepad1.x){
             driveSpeed = .50;
+            pattern = RevBlinkinLedDriver.BlinkinPattern.CP2_LIGHT_CHASE;
+            displayPattern();
         }
 
         if (gamepad1.y){
             driveSpeed = .25;
+            pattern = RevBlinkinLedDriver.BlinkinPattern.COLOR_WAVES_OCEAN_PALETTE;
+            displayPattern();
         }
 
         //End of speed Controls
@@ -164,16 +172,24 @@ public class Ethan_Concept_Test extends LinearOpMode {
         // Turns on and off the launcher
         if (gamepad2.back && launcherSpeed == 1){
             launcherSpeed = 0;
+            pattern = RevBlinkinLedDriver.BlinkinPattern.STROBE_GOLD;
+            displayPattern();
         } else if (gamepad2.back && launcherSpeed == 0){
             launcherSpeed = 1;
+            pattern = RevBlinkinLedDriver.BlinkinPattern.CONFETTI;
+            displayPattern();
         }
         /** <== End of launcher controls **/
 
         /** Conveyor controls ==> **/
         if (gamepad2.start && conveyorSpeed == 1){
             conveyorSpeed = 0;
+            pattern = RevBlinkinLedDriver.BlinkinPattern.STROBE_RED;
+            displayPattern();
         } else if (gamepad2.start && conveyorSpeed == 0){
             conveyorSpeed = 1;
+            pattern = RevBlinkinLedDriver.BlinkinPattern.CONFETTI;
+            displayPattern();
         }
         /** <== End of conveyor controls **/
 
@@ -190,16 +206,24 @@ public class Ethan_Concept_Test extends LinearOpMode {
         /** Launchbar controls ==> **/
         if (gamepad2.a && servoLaunchBar.getPosition() == 1){
             servoLaunchBar.setPosition(0);
+            pattern = RevBlinkinLedDriver.BlinkinPattern.COLOR_WAVES_RAINBOW_PALETTE;
+            displayPattern();
         } else if (gamepad2.a && servoLaunchBar.getPosition() == 0){
             servoLaunchBar.setPosition(1);
+            pattern = RevBlinkinLedDriver.BlinkinPattern.GREEN;
+            displayPattern();
         }
         /** <== End of launchbar controls **/
 
         /** Launch angle controls ==> **/
         if (gamepad2.dpad_up){
             servoLaunchAngle.setPosition(servoLaunchAngle.getPosition() + 0.1);
+            pattern = RevBlinkinLedDriver.BlinkinPattern.LIGHT_CHASE_BLUE;
+            displayPattern();
         } else if (gamepad2.dpad_down){
             servoLaunchAngle.setPosition(servoLaunchAngle.getPosition() - 0.1);
+            pattern = RevBlinkinLedDriver.BlinkinPattern.LIGHT_CHASE_RED;
+            displayPattern();
         }
         /** <== End of launch angle controls **/
 
