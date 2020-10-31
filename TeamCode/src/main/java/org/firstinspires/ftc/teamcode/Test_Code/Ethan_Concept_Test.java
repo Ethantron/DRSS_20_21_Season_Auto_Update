@@ -25,7 +25,7 @@ import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.robotcore.internal.system.Deadline;
 
 @TeleOp(name = "Ethan_Concept_Test", group= "Test_Code")
-public class Ethan_Concept_Test extends LinearOpMode {
+public class Ethan_Concept_Test extends TeleDrive {
 
     public DcMotor motorFrontRight;
     public DcMotor motorFrontLeft;
@@ -59,9 +59,8 @@ public class Ethan_Concept_Test extends LinearOpMode {
     SampleRevBlinkinLedDriver.DisplayKind displayKind;
 
 
-    @Override
     public void runOpMode() {       // Begins running the initialization code when the "int" button is pressed
-
+        super.init();
         displayKind = SampleRevBlinkinLedDriver.DisplayKind.MANUAL;
         blinkinLedDriver = hardwareMap.get(RevBlinkinLedDriver.class, "blinkin");
         pattern = RevBlinkinLedDriver.BlinkinPattern.BEATS_PER_MINUTE_LAVA_PALETTE;
@@ -110,8 +109,8 @@ public class Ethan_Concept_Test extends LinearOpMode {
         telemetry.addData("Status: ", "Ready");                 // Adds telemetry to the screen to show that the robot is ready
         telemetry.addData("Press Play to Start ", "TeleOp");    // Adds telemetry to the screen to tell the drivers that the code is ready to start
         telemetry.update();                                                   // Tells the telemetry to display on the phone
-
-        waitForStart();     // Tells the code to wait here until the drivers have pressed the start button
+        super.start();
+            // Tells the code to wait here until the drivers have pressed the start button
 
         /** Gamepad 1 controls (drive train) ==> **/
 
