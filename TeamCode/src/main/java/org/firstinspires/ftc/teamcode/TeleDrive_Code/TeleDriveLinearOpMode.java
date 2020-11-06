@@ -1,16 +1,16 @@
-package org.firstinspires.ftc.teamcode.Test_Code;
+package org.firstinspires.ftc.teamcode.TeleDrive_Code;
 
-import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 
-public abstract class TeleDrive extends OpMode {
+public class TeleDriveLinearOpMode extends LinearOpMode {
     private DatagramSocket socket;
     private boolean canRunGamepadThread;
     private Thread gamepadHandler;
 
-    private void startGamepadHandlerThread() {
+ void startGamepadHandlerThread() {
         telemetry.setAutoClear(true);
         gamepadHandler = new Thread(new Runnable() {
             @Override
@@ -297,9 +297,9 @@ public abstract class TeleDrive extends OpMode {
         gamepadHandler.start();
     }
 
-
     @Override
-    public void init() {
+    public void runOpMode() {
+
         String address = "192.168.43.1";
         int port = 11039;
         canRunGamepadThread = false;
@@ -313,21 +313,15 @@ public abstract class TeleDrive extends OpMode {
         telemetry.addData("Status", "Initialized");
         telemetry.addData("Connect your server to " + address + ":" + port, "");
         telemetry.update();
-    }
 
-    @Override
-    public void loop() {
-        if(!canRunGamepadThread) {
-            canRunGamepadThread = true;
-            startGamepadHandlerThread();
-        }
-    }
+        waitForStart();
 
-    @Override
-    public void stop() {
-        super.stop();
+        startGamepadHandlerThread();
+
+
+        //CUSTOM CODE GOES HERE
+
         canRunGamepadThread = false;
         socket.close();
     }
-
 }

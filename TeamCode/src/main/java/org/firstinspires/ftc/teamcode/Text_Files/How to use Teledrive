@@ -1,0 +1,7 @@
+When using Teledrive, you need to take a few steps.
+
+1. Extend the linear code to LinearOpMode, not anything else.
+2. Add "TELEDRIVE_Hardware Tele = new TELEDRIVE_Hardware();" to device setup.
+3. Add "Tele.Init();" to the start of Init.
+4. Add "Tele.startGamepadHandlerThread();" right below "waitForStart();".
+5. Add "Tele.End();" to the end of the runOpMode(){} Loop.
