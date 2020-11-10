@@ -5,6 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DigitalChannel;
+import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.Range;
 
 import org.firstinspires.ftc.robotcontroller.external.samples.SampleRevBlinkinLedDriver;
@@ -20,12 +21,13 @@ public class Tank_Drive extends OpMode{
 	public DcMotor motorFrontLeft;
 	public DcMotor motorBackRight;
 	public DcMotor motorBackLeft;
+	public Servo test;
 	double Speed = 1;
 	double Frontleft;
 	double Frontright;
 	double Backleft;
 	double Backright;
-	public DigitalChannel Button; // Defines the Stone Button on the grabber
+/*	public DigitalChannel Button; // Defines the Stone Button on the grabber
 	public DigitalChannel zero;
 	public DigitalChannel one;
 	public DigitalChannel two;
@@ -48,10 +50,10 @@ public class Tank_Drive extends OpMode{
 		MANUAL,
 		AUTO
 	}
-
+*/
 	public void init(){
 
-		displayKind = SampleRevBlinkinLedDriver.DisplayKind.MANUAL;
+		//displayKind = SampleRevBlinkinLedDriver.DisplayKind.MANUAL;
 
 		/*
 		 * Use the hardwareMap to get the dc motors and servos by name. Note
@@ -71,7 +73,10 @@ public class Tank_Drive extends OpMode{
 		motorFrontRight.setDirection(DcMotor.Direction.REVERSE);
 		motorBackRight.setDirection(DcMotor.Direction.REVERSE);
 
+		test = hardwareMap.servo.get("Servo");
+		test.setPosition(0);
 
+/*
 		blinkinLedDriver = hardwareMap.get(RevBlinkinLedDriver.class, "blinkin");
 		pattern = RevBlinkinLedDriver.BlinkinPattern.BEATS_PER_MINUTE_LAVA_PALETTE;
 		blinkinLedDriver.setPattern(pattern);
@@ -81,8 +86,8 @@ public class Tank_Drive extends OpMode{
 
 		ledCycleDeadline = new Deadline(LED_PERIOD, TimeUnit.SECONDS);
 
-		Button = hardwareMap.get(DigitalChannel.class, "button"); // Initializes the stone button name for configuration
-		Button.setMode(DigitalChannel.Mode.INPUT);                                 // Initializes the mode of the button
+		//Button = hardwareMap.get(DigitalChannel.class, "button"); // Initializes the stone button name for configuration
+		//Button.setMode(DigitalChannel.Mode.INPUT);                                 // Initializes the mode of the button
 
 		zero = hardwareMap.get(DigitalChannel.class, "zero"); // Initializes the stone button name for configuration
 		zero.setMode(DigitalChannel.Mode.INPUT);                                 // Initializes the mode of the button
@@ -100,7 +105,7 @@ public class Tank_Drive extends OpMode{
 		four.setMode(DigitalChannel.Mode.INPUT);                                 // Initializes the mode of the button
 
 		five = hardwareMap.get(DigitalChannel.class, "five"); // Initializes the stone button name for configuration
-		five.setMode(DigitalChannel.Mode.INPUT);                                 // Initializes the mode of the button
+		five.setMode(DigitalChannel.Mode.INPUT);                                 // Initializes the mode of the button */
 	}
 
 	@Override
@@ -120,28 +125,36 @@ public class Tank_Drive extends OpMode{
 
 		if (gamepad1.a){
 			Speed = 1;
-			pattern = RevBlinkinLedDriver.BlinkinPattern.COLOR_WAVES_RAINBOW_PALETTE;
-			displayPattern();
+			//pattern = RevBlinkinLedDriver.BlinkinPattern.COLOR_WAVES_RAINBOW_PALETTE;
+		//	displayPattern();
 		}
 
 		if (gamepad1.b){
 			Speed = .75;
-			pattern = RevBlinkinLedDriver.BlinkinPattern.RED;
-			displayPattern();
+			//pattern = RevBlinkinLedDriver.BlinkinPattern.RED;
+		//	displayPattern();
 		}
 
 		if (gamepad1.x){
 			Speed = .50;
-			pattern = RevBlinkinLedDriver.BlinkinPattern.YELLOW;
-			displayPattern();
+			//pattern = RevBlinkinLedDriver.BlinkinPattern.YELLOW;
+		//	displayPattern();
 		}
 
 		if (gamepad1.y){
 			Speed = .25;
-			pattern = RevBlinkinLedDriver.BlinkinPattern.GREEN;
-			displayPattern();
+			//pattern = RevBlinkinLedDriver.BlinkinPattern.GREEN;
+		//	displayPattern();
 		}
 
+		if (gamepad1.dpad_up){
+			test.setPosition(1.0);
+		} else if (gamepad1.dpad_down){
+			test.setPosition(-1.0);
+		}else {
+			test.setPosition(0.0);
+		}
+/*
 		if (!Button.getState()){
 			pattern = RevBlinkinLedDriver.BlinkinPattern.CONFETTI;
 			displayPattern();
@@ -175,32 +188,32 @@ public class Tank_Drive extends OpMode{
 		if (!five.getState()){
 			pattern = RevBlinkinLedDriver.BlinkinPattern.TWINKLES_RAINBOW_PALETTE;
 			displayPattern();
-		}
+		}*/
 
 		telemetry.addData("speed", Speed);
 		telemetry.update();
-
+/*
 		if (gamepad1.left_stick_y>0.1 && gamepad1.right_stick_y>0.1){
-			pattern = RevBlinkinLedDriver.BlinkinPattern.LIGHT_CHASE_RED;
+		//	pattern = RevBlinkinLedDriver.BlinkinPattern.LIGHT_CHASE_RED;
 			displayPattern();
 		}
 		if (gamepad1.left_stick_y<-0.1 && gamepad1.right_stick_y<-0.1){
-			pattern = RevBlinkinLedDriver.BlinkinPattern.COLOR_WAVES_PARTY_PALETTE;
+		//	pattern = RevBlinkinLedDriver.BlinkinPattern.COLOR_WAVES_PARTY_PALETTE;
 			displayPattern();
 		}
 
 		if(gamepad1.left_stick_y>.1 && gamepad1.right_stick_y<-.1){
-			pattern = RevBlinkinLedDriver.BlinkinPattern.SINELON_OCEAN_PALETTE;
+		//	pattern = RevBlinkinLedDriver.BlinkinPattern.SINELON_OCEAN_PALETTE;
 			displayPattern();
 		}
 
 		if(gamepad1.left_stick_y<-.1 && gamepad1.right_stick_y>.1){
-			pattern = RevBlinkinLedDriver.BlinkinPattern.SINELON_FOREST_PALETTE;
+		//	pattern = RevBlinkinLedDriver.BlinkinPattern.SINELON_FOREST_PALETTE;
 			displayPattern();
 		}
-	}
+	}*/
 
-	protected void setDisplayKind(SampleRevBlinkinLedDriver.DisplayKind displayKind)
+/*	protected void setDisplayKind(SampleRevBlinkinLedDriver.DisplayKind displayKind)
 	{
 		this.displayKind = displayKind;
 		display.setValue(displayKind.toString());
@@ -219,5 +232,6 @@ public class Tank_Drive extends OpMode{
 	{
 		blinkinLedDriver.setPattern(pattern);
 		patternName.setValue(pattern.toString());
-	}
+	}*/
+}
 }
